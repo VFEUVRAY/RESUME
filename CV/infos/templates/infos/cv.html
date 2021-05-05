@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load static %}
+        <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+        <link rel="stylesheet" type="text/css" href="{% static 'infos/cv.css' %}">
+        <title>{{ me.firstName }} {{ me.lastName }}</title>
+    </head>
+    <body class="page_frame">
+        <div class="resume_mainframe">
+            <!-- Side Bar Section-->
+            <div class="side_bar">
+                <img src="{% static 'infos/images/photo_etna.jpg' %}" alt="vaillant feuvray">
+                <h1 class="name">{{ me.firstName }} {{ me.lastName }}</h1>
+                <h3 class="side_bar_section">{{ profile_title }}</h3>
+                <p>{{ profile_text|safe }}</p>
+                <!-- Contact Informations -->
+                <h3 class="side_bar_section">{{ contact_title }}</h3>
+                <ul class="side_bar_contacts">
+                    <div class="contacts_grouping">
+                    <li style="margin-bottom: 0;">{{ me.address }}</li>
+                    <li style="margin-top: 0;">{{ me.phone_id.number }}</li>
+                    <li><a  class="contacts_weblink" href="mailto:{{ me.email }}" target="_blank">{{ me.email }}</a></li>
+                    </div>
+                    <div class="contacts_grouping">
+                    <li><a  class="contacts_weblink" href={{ me.github }} target="_blank">{{ me.github_display }}</a></li>
+                    <li><a  class="contacts_weblink" href={{ me.linkedin }} target="_blank">{{ me.linkedin_display }}</a></li>
+                    </div>
+                </ul>
+                <!-- Skills Section -->
+                <h3 class="side_bar_section">{{ skills.section }}</h3>
+                <ul class="side_bar_skill_section">
+                    {% for skl in sub_skill %}
+                        <li class="skill_category">{{ skl.name }}</li>
+                        <li class="skill_element">{{ skl.text }}</li>
+                    {% endfor %}
+                </ul>
+                <!-- Hobbies Section -->
+                <h3 class="side_bar_section">{{ hobbies }}</h3>
+                <ul class="side_bar_skill_section">
+                    {% for hob in sub_hobbies %}
+                        <li class="skill_category">{{ hob.name }}</li>
+                        <li class="skill_element">{{ hob.text|safe }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="main_section">
+                <div class="title_section">
+                    <h1 class="titles">{{ title.name }}</h1>
+                    <h2 class="titles">{{ title.text }}</h2>
+                </div>
+                    {% for cat in main %}
+                        <div class="category">
+                            <h2>{{ cat.title.name }}</h2>
+                            {% for sub in cat.sub_sections %}
+                                <div>
+                                    <h3 class="category_subname">{{ sub.name }}</h3>
+                                    <p class="category_subtext"><i>{{ sub.text }}</i></p>
+                                    <p class="category_paragraph">{{ sub.paragraph|safe }}</p>
+                                </div>
+                            {% endfor %}
+                            {% if cat.title.id != 7 %}
+                            <hr style="margin:35px;">
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>

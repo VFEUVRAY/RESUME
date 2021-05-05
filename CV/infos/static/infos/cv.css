@@ -1,0 +1,155 @@
+.page_frame {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(16, 32, 46);
+}
+
+hr {
+    color: black;
+    background-color: black;
+    height: 1px;
+    border-style: solid;
+    border-radius: 8px;
+}
+
+.resume_mainframe {
+    transition: .8s ease;
+    display: flex;
+    width: 900px;
+    margin: 50px;
+    background-color: rgb(240, 240, 227);
+    font-family: Helvetica;
+}
+
+.side_bar {
+    padding:20px;
+    color: white;
+    width: 300px;
+    background-color: rgb(99, 153, 117);
+}
+
+/* Side Bar Contact informations CSS */
+
+.mail {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    text-shadow: 50px;
+}
+
+.contacts_weblink {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    text-shadow: 50px;
+    font-size:80%;
+    transition: .1s ease;
+}
+
+.contacts_weblink:hover {
+    box-shadow: 0 0 20px 0 teal;
+    -moz-box-shadow: 0 0 20px 0 teal;
+    -webkit-box-shadow: 0 0 20px 0 teal;
+    background-color: rgba(0, 128, 128, 0.329);
+    border-radius: 40px;
+    transition: .1s ease;
+    font-size: 95%;
+    /*text-decoration: underline;*/
+}
+
+.side_bar_contacts {
+    list-style-type:none;
+    padding-left:0;
+}
+
+.side_bar_contacts li {
+    margin: 10px 0 10px 0;
+}
+
+.name {
+    font-family: Oswald;
+    color:white;
+}
+
+.side_bar_section {
+    font-family: Oswald;
+    font-weight: 500;
+    font-size: 130%;
+    color: black;
+    text-decoration: underline;
+    margin: 10px 0 10px 0;
+}
+
+.contacts_grouping {
+    margin: 10px 0 10px 0;
+}
+
+.contacts_grouping li {
+    margin: 0;
+}
+
+/* Skill Section CSS */
+
+.side_bar_skill_section {
+    padding: 0;
+    list-style-type: none;
+}
+
+.skill_category {
+    margin: 0;
+    text-decoration: underline;
+}
+
+.skill_element {
+    margin: 5px 0 10px 10px;
+}
+
+
+
+/* Main Page CSS */
+
+/* CV Title CSS */
+
+.main_section {
+    width: 100%;
+}
+
+.title_section {
+    margin-top:30px;
+    display: flex;
+    flex-direction: column;
+    /*justify-content: space-around;
+    align-content: space-around;*/
+    list-style-type: none;
+    width: 100%;
+}
+
+.titles {
+    font-family: Oswald;
+    letter-spacing: 7px;
+    margin: 0;
+    text-align: center;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+/* main categories CSS */
+
+.category {
+    margin: 20px;
+}
+
+.category_subname {
+    color: rgba(83, 83, 83, 0.644);
+    margin: 0;
+}
+
+.category_subtext {
+    font-size: 85%;
+    margin: 0;
+}
+
+.category_paragraph {
+    font-size: 112%;
+    margin:8px;
+}
