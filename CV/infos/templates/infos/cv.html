@@ -10,7 +10,7 @@
         <div class="resume_mainframe">
             <!-- Side Bar Section-->
             <div class="side_bar">
-                <img src="{% static 'infos/images/photo_etna.jpg' %}" alt="vaillant feuvray">
+                <img src="{% static 'infos/images/tof_etna.jpg' %}" alt="vaillant feuvray" class="my_picture">
                 <h1 class="name">{{ me.firstName }} {{ me.lastName }}</h1>
                 <h3 class="side_bar_section">{{ profile_title }}</h3>
                 <p>{{ profile_text|safe }}</p>
@@ -58,11 +58,11 @@
                                     <p class="category_subtext"><i>{{ sub.text }}</i></p>
                                     <p class="category_paragraph">{{ sub.paragraph|safe }}</p>
                                 </div>
-                            {% endfor %}
-                            {% if cat.title.id != 7 %}
-                            <hr style="margin:35px;">
-                            {% endif %}
+                            {% endfor %}    
                         </div>
+                        {% if cat.title.id != 7 %}
+                            <hr style="margin:25px;">
+                        {% endif %}
                     {% endfor %}
             </div>
         </div>
